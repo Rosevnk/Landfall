@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Landfall</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <div id="left-panel">
+
+        <div id="film-area">
+          <video id="main-video" autoplay loop playsinline>
+            <source id="video-source" src="public/videos/loading _noText.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div id="subtitle-panel">
+        <div id="subtitle-text">
+        <p id="subtitle-next"></p>
+        <p id="subtitle-current"></p>
+        </div>
+         <video id="subtitle-video" autoplay loop muted playsinline style="display:none">
+          <source id="subtitle-source" src="" type="video/mp4">
+        </video>
+        </div>
+
+      </div>
+
+      <div id="right-panel">
+
+        <div id="image-header">
+          <p id="header-desc"></p>
+        </div>
+
+        <canvas id="archive-canvas"></canvas>
+
+      </div>
+
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

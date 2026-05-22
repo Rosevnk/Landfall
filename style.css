@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(0, 0, 0);
+}
+
+@font-face {
+  font-family: 'PPMori';
+  src: url('/font/PPMori-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPMori';
+  src: url('/font/PPMori-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PPMori';
+  src: url('/font/PPMori-Extralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPMori';
+  src: url('public/font/PPMori-ExtralightItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+}
+
+#wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 0;
+}
+
+/* ── left panel ───────────────────────────────────────────────────────────── */
+
+#left-panel {
+  cursor: none;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+#film-area {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+#film-area video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ── right panel ─────────────────────────────────────────────────────────── */
+
+#right-panel {
+  width: 40%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  position: relative;
+  cursor: grab;
+  margin: 0;
+}
+
+#right-panel:active {
+  cursor: grabbing;
+}
+
+/* ── image header (description above archive) ────────────────────────────── */
+
+#image-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#header-desc {
+  font-size: 12px;
+  font-family: 'PPMori';
+  font-style: normal;
+  color: #f04b26;
+  text-align: justify; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+
+/* ── canvas ──────────────────────────────────────────────────────────────── */
+
+#archive-canvas {
+  cursor: crosshair;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── subtitle ──────────────────────────────────────────────────────────────── */
+
+#subtitle-panel {
+  height: 15%;
+  background: #f1f2f2;
+  overflow: hidden;
+  position: relative;
+}
+
+#subtitle-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+  padding: 20px 24px;
+  text-align: center;
+}
+
+#subtitle-current {
+  font-size: 14px;
+  color: #f04b26;
+  font-family: 'PPMori', sans-serif;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: right;
+  align-self: flex-end;
+}
+
+#subtitle-next {
+  font-size: 18px;
+  color: #4a779f;
+  font-family: 'PPMori', sans-serif;
+  font-style: normal;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#subtitle-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  scale: 1;
+}
